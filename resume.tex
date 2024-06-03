@@ -1,0 +1,149 @@
+\documentclass[10pt]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[a4paper, top = 15ex, vmarginratio = 2:3]{geometry}
+\usepackage{microtype}
+\usepackage[sfdefault]{noto}
+\usepackage{stringstrings}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\setlength\parindent{0em}
+\renewcommand\baselinestretch{1.125}
+\setlist{labelwidth=0.25em, leftmargin=!}
+\SetLabelAlign{middle}{\hfill{}#1\hfill}
+\newlist{iconize}{itemize}{1}
+\setlist[iconize]{align=middle, labelwidth=1.25em, noitemsep}
+
+\newcommand\asidefill[1]{{#1}\hspace{1em}\leavevmode\leaders\hrule height 0.75ex depth -0.5ex\hfill\kern 0em}
+\newcommand\asideformat{\bfseries\color{black!62.5}}
+\newcommand\aside[1]{\hfill{\footnotesize\asideformat\raisebox{1pt}{#1}}}
+
+\titleformat\section{\large\asideformat}{}{0em}{\asidefill}
+\titlespacing\section{0em}{1.5ex}{1ex}
+
+\title{Resume}
+\author{Jonathan Conder}
+\newcommand\theemail{jono.conder@gmail.com}
+\newcommand\thenumber{+64 20 4095 4837}
+\newcommand\thegithub{github.com/jonathan-conder}
+\newcommand\thegithubsm{github.com/jonathan-conder-sm}
+\newcommand\thelinkedin{linkedin.com/in/jonathan-conder}
+
+\convertchar[e]{\thenumber}{ }{}
+\convertchar[e]{\thestring}{(}{} % chktex 9
+\convertchar[e]{\thestring}{)}{} % chktex 9
+\convertchar[q]{\thestring}{-}{}
+\edef\thenumberplain{\thestring}
+
+\hypersetup{pdftitle = {\thetitle}, pdfauthor = {\theauthor}, final}
+
+\begin{document}
+
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{iconize}
+	\item[\faUser]
+		\theauthor
+	\item[\faEnvelope]
+		\href{mailto:\theemail}{\theemail}
+	\item[\faPhone]
+		\href{tel:\thenumberplain}{\thenumber}
+	\end{iconize}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{iconize}
+	\item[\faGithub]
+		\href{https://\thegithub}{\thegithub}
+	\item[\faGithub]
+		\href{https://\thegithubsm}{\thegithubsm}
+	\item[\faLinkedin]
+		\href{https://www.\thelinkedin}{\thelinkedin}
+	\end{iconize}
+\end{minipage}
+
+\section{Profile}
+
+Software engineer with expertise in backend development, DevOps, machine learning and systems programming.
+Proficient Android/frontend developer.
+PhD in Mathematics and BSc in Computer Science.
+
+\section{Employment}
+
+\begin{itemize}
+\item
+	Senior R\&D Software Engineer at Soul Machines. \aside{2020--2024}
+
+	Part of a small team of researchers and engineers that developed AI models which drove the behaviour of realistic virtual characters.
+	Responsible for two Python services which hosted some of these models, using FastAPI and PyTorch.
+	Contributions:
+	\begin{itemize}
+	\item
+		Trained and evaluated models, typically transformers or convolutional neural networks, to perform tasks such as language modeling and object detection.
+	\item
+		Created and maintained REST APIs which exposed these models to other services.
+	\item
+		Configured cloud deployments on AWS and Azure using Kubernetes and Terraform.
+		Submitted bug reports and patches to Amazon EKS-D and related projects.
+	\item
+		Simplified deployment with Poetry and Docker.
+		Used BuildKit and other techniques to write cache-friendly Dockerfiles.
+		This made typical image uploads over 100$\times$ faster.
+	\end{itemize}
+
+	Contributed to a large cross-platform codebase, written in C, C++ and Julia.
+	Highlights:
+	\begin{itemize}
+	\item
+		Created a high-level library for running TensorFlow Lite models, using C++ and OpenCV.
+		It uses data-oriented design extensively, resulting in it running 4$\times$ faster than Google's equivalent, with 100$\times$ less variance in processing time.
+	\item
+		Maintained a Julia fork.
+		Contributed patches upstream whenever possible.
+	\item
+		Rewrote our C/Julia interface to improve overall performance by 10-15$\%$.
+	\end{itemize}
+
+	Improved developer experience by taking the initiative to:
+	\begin{itemize}
+	\item
+		Review pull requests and assist with debugging regressions.
+	\item
+		Write GitHub Actions in JavaScript to implement CI/CD for Julia and Python code.
+	\item
+		Simplify and automate builds using CMake imported targets and Conan packages.
+	\item
+		Implement remote debugging for Julia by creating a VS Code extension in TypeScript.
+	\item
+		Document code using Documenter.jl, Doxygen and Sphinx.
+	\end{itemize}
+\end{itemize}
+
+\section{Skills}
+
+\begin{itemize}
+\item
+	Quickly understanding and solving problems, in both familiar and new environments.
+\item
+	Communicating clearly and resolving misunderstandings.
+\item
+	Working effectively in both independent and team settings.
+\item
+	Assisting others when needed and helping them grow professionally.
+\end{itemize}
+
+\section{Education}
+
+\begin{itemize}
+\item
+	PhD in Mathematics (Algebraic Geometry), University of California San Diego. \aside{2013--2019}
+\item
+	BSc (Honours) in Mathematics, University of Auckland. \aside{2012\phantom{--2012}}
+\item
+	Conjoint BSc in Computer Science/BA in Mathematics, University of Auckland. \aside{2009--2011}
+\end{itemize}
+
+\end{document}
