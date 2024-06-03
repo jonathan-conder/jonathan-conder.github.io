@@ -30,6 +30,12 @@
 
       texlive = pkgs.texliveBasic.withPackages texPackages;
     in {
+      github-pages = pkgs.bundlerEnv {
+        name = "github-pages-env";
+        gemdir = self;
+        meta.mainProgram = "github-pages";
+      };
+
       latexmk = lib.addMetaAttrs {mainProgram = "latexmk";} texlive;
     };
 

@@ -1,0 +1,21 @@
+title: Jonathan Conder
+author: Jonathan (he/him)
+email: jono.conder@gmail.com
+description: >-
+  Software engineer with expertise in backend development, DevOps, machine learning and systems programming.
+  PhD in Mathematics and BSc in Computer Science.
+github_username: jonathan-conder
+linkedin_username: jonathan-conder
+
+theme: minima
+plugins:
+- jekyll-github-metadata
+
+exclude:
+- '*.nix'
+- '*.lock'
+- Gemfile
+- README.md
+- 'resume.*'
+include:
+- resume.pdf
